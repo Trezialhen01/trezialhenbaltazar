@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="trezia lhen baltazar, nisu, cics">
+    <meta name="description" content="Capstone Title Generator by Trezia Lhen Baltazar. A simple tool for generating creative capstone project ideas.">
+    <meta name="author" content="Trezia Lhen Baltazar">
+    <title>Capstone Title Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <i id="night-mode-toggle" class="fas fa-moon"></i>
+    <div class="container">
+        <div class="left-side">
+            <h1>Capstone Title Generator</h1>
+            <h4>This Capstone Title Generator, developed by Trezia Lhen Baltazar, a 4th-year student of Northern Iloilo State University, is a tool designed for Bachelor of Information Technology students who are struggling to come up with a unique capstone title. The generator aims to ease the process, helping students create the best title while reducing stress. It is a mini project meant to assist in generating creative and appropriate capstone ideas quickly and efficiently.</h4>
+            
+            <!-- Social Icons and Share Button (added below h1 and h4) -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/potatocheeseballdump/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:trezialhen@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="share-button">
+                <button onclick="shareLink()">Share</button>
+            </div>
+        </div>
+        <div class="right-side">
+            <button onclick="generateTitle()">Generate Title</button>
+            <p id="title"></p>
+
+            <!-- Titles List -->
+            <ul id="titles" style="display: none;">
+                <li>Time-Tracking System for Employee Productivity Monitoring</li>
+                <li>Personal Finance Tracking and Management Solution</li>
+                <li>Online Classroom Management Tool for Educators</li>
+                <li>Transportation Logistics and Delivery Management System</li>
+                <li>A Volunteer Coordination and Management Platform</li>
+                <li>Real Estate Property Management Solution for Agencies</li>
+                <li>Digital Asset Organization and Management System</li>
+                <li>An Online Course Administration and Management System</li>
+                <li>An Automated Plant Watering System Using Arduino</li>
+                <li>Home Security System with Motion Detection Using Arduino</li>
+                <li>Temperature and Humidity Monitoring System with Arduino</li>
+                <li>Smart Parking System for Efficient Space Management</li>
+                <li>A Motion-Activated Lighting System</li>
+                <li>Security System with Real-Time Alerts via Motion Sensors</li>
+                <li>Energy-Efficient Smart Lighting System for Homes</li>
+                <li>Automated Vehicle Parking Management System</li>
+                <li>Solar Panel Efficiency Monitoring System</li>
+                <li>Forest Fire Detection System Using Sensors</li>
+                <li>Smart Recycling Bin with Sensor Alerts</li>
+                <li>Automated Flood Monitoring and Warning System</li>
+                <li>Voice-Activated Home Automation System</li>
+                <li>Automated Point-of-Sale System</li>
+                <li>Traffic Flow Management System</li>
+                <li>Smart Traffic Lights System</li>
+                <li>Carpooling System for Commuters</li>
+                <li>Automated Toll Collection System</li>
+                <li>Fleet Management System for Delivery Trucks</li>
+                <li>Smart Road Maintenance System</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        <p>@Trezia Lhen Baltazar. All Rights Reserved</p>
+    </div>
+    <script>
+        function generateTitle() {
+            const titles = document.getElementById('titles').children;
+            const randomIndex = Math.floor(Math.random() * titles.length);
+            document.getElementById('title').innerText = titles[randomIndex].innerText;
+        }
+
+        function shareLink() {
+            const url = window.location.href;
+            const text = "Check out this Capstone Title Generator!";
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Capstone Title Generator',
+                    text: text,
+                    url: url
+                }).catch((error) => console.error("Error sharing:", error));
+            } else {
+                alert("Share functionality is not supported on your browser. Copy this URL: " + url);
+            }
+        }
+
+        const nightModeToggle = document.getElementById('night-mode-toggle');
+        const body = document.body;
+
+        nightModeToggle.addEventListener('click', () => {
+            body.classList.toggle('night-mode');
+            if (body.classList.contains('night-mode')) {
+                nightModeToggle.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                nightModeToggle.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+    </script>
+</body>
+</html>

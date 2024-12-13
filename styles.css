@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, #ff6b6b, #f4d03f, #48c9b0, #3498db);
+    background-size: 400% 400%;
+    animation: gradientBackground 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.night-mode {
+    background: linear-gradient(45deg, #020202, #0e3163);
+    color: white;
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.left-side {
+    flex: 1;
+    padding: 40px;
+    text-align: center; /* Center content for better mobile alignment */
+}
+
+.right-side {
+    flex: 1;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px 60px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Add some space for smaller screens */
+}
+
+h1 {
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.5;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#title {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #4CAF50;
+}
+
+.share-button {
+    margin-top: 20px;
+}
+
+.share-button button {
+    background-color: #1e90ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.share-button button:hover {
+    background-color: #1c86ee;
+}
+
+#night-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    z-index: 100;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #151515;
+    background-color: transparent;
+    color: rgb(7, 7, 7);
+    margin-top: 20px;
+}
+
+select:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    color: #111111;
+    padding: 10px 0;
+}
+
+.footer p {
+    margin: 0;
+    padding: 10px;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%; /* Full width for smaller screens */
+    }
+
+    .left-side, .right-side {
+        flex: 1 100%; /* Each takes full width */
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px; /* Smaller title font */
+    }
+
+    h4 {
+        font-size: 14px; /* Smaller description font */
+    }
+
+    button {
+        width: 100%; /* Full-width button on smaller screens */
+    }
+
+    .social-icon {
+        font-size: 20px; /* Smaller icons on mobile */
+    }
+
+    .footer p {
+        font-size: 12px; /* Smaller footer text */
+    }
+}
